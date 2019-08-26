@@ -17,6 +17,7 @@ com\premia\model\PolicyBroker.class
 com\premia\service\UserService.class
 com\premia\model\PolicySection.class
 com\premia\persistence\UserPersist.class
+com\premia\entity\Hibernate_Test.class
 com\premia\model\PolicyRisk.class
 com\premia\controller\RegisterationInceptor.class
 com\premia\entity\PolicyRiskEntity.class

@@ -19,7 +19,7 @@ import org.hibernate.annotations.Table;
 
 import com.premia.model.UserAddress;
 
-@Entity(name = "User_Details12")
+@Entity(name = "User_Details")
 public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -57,8 +57,19 @@ public class UserEntity {
 	 * void setPolicy(Collection<PolicyEntity> policy) { this.policy = policy; }
 	 */
 
-	/*@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user")
 	private Collection<PolicyEntity> policy = new ArrayList<PolicyEntity>();
+	
+	@OneToMany(mappedBy = "usersec_id")
+	private Collection<PolicySectionEntity> user_sections = new ArrayList<PolicySectionEntity>();
+
+	public Collection<PolicySectionEntity> getUser_sections() {
+		return user_sections;
+	}
+
+	public void setUser_sections(Collection<PolicySectionEntity> user_sections) {
+		this.user_sections = user_sections;
+	}
 
 	public Collection<PolicyEntity> getPolicy() {
 		return policy;
@@ -66,7 +77,7 @@ public class UserEntity {
 
 	public void setPolicy(Collection<PolicyEntity> policy) {
 		this.policy = policy;
-	}*/
+	}
 
 	public UserAddress getUser_address1() {
 		return user_address1;

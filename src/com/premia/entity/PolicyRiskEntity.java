@@ -1,8 +1,18 @@
 package com.premia.entity;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity(name="Pgit_Pol_Risk")
 public class PolicyRiskEntity {
+	@Id
 	private Integer prai_pol_sys_id;
 	private String prai_pol_no;
 	private String prai_div_code;
@@ -14,6 +24,30 @@ public class PolicyRiskEntity {
 	private Double prai_cvr_si_lc_1;
 	private Double prai_cvr_prem_fc;
 	private Double prai_cvr_prem_lc_1;
+	
+	@ManyToOne
+	@JoinColumn(name="prai_pol_section_id")
+	private PolicySectionEntity prai_pol_section_id ;
+	
+	@OneToMany/*(mappedBy = "prc_pol_risk_id")*/
+	private Collection<PolicyRiskCoverEntity> risk_covers = 
+	new ArrayList<PolicyRiskCoverEntity>();
+
+	public PolicySectionEntity getPrai_pol_section_id() {
+		return prai_pol_section_id;
+	}
+
+	public void setPrai_pol_section_id(PolicySectionEntity prai_pol_section_id) {
+		this.prai_pol_section_id = prai_pol_section_id;
+	}
+
+	public Collection<PolicyRiskCoverEntity> getRisk_covers() {
+		return risk_covers;
+	}
+
+	public void setRisk_covers(Collection<PolicyRiskCoverEntity> risk_covers) {
+		this.risk_covers = risk_covers;
+	}
 
 	public Integer getPrai_pol_sys_id() {
 		return prai_pol_sys_id;

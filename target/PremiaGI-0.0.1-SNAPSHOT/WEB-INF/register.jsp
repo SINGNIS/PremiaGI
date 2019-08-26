@@ -33,19 +33,19 @@
 <td><form:radiobutton path="user_gender" value="M" label="M"/>
 <form:radiobutton path="user_gender" value="F" label="F"/></td></tr>
 
-<tr><td><label for="user_address1" >Address 1</label></td>
-<td><form:input path="user_address1" />
+<tr><td><label for="user_address1.address1" >Address 1</label></td>
+<td><form:input path="user_address1.address1" />
 </tr>
-<tr><td><label for="user_address2" >Address 2</label></td>
-<td><form:input path="user_address2" />
+<tr><td><label for="user_address1.address2" >Address 2</label></td>
+<td><form:input path="user_address1.address2" />
 </tr>
-<tr><td><label for="user_address3" >Address 3</label></td>
-<td><form:input path="user_address3" />
+<tr><td><label for="user_address1.address3" >Address 3</label></td>
+<td><form:input path="user_address1.address3" />
 </tr>
 
-<tr><td><label for="user_city" >City</label></td>
+<tr><td><label for="user_address1.city" >City</label></td>
 <td>
-<form:select path="user_city">
+<form:select path="user_address1.city">
 <form:option value="Bangalore"></form:option>
 <form:option value="Chennai"></form:option>
 <form:option value="Nagpur"></form:option>
@@ -56,9 +56,9 @@
 <form:option value="Delhi"></form:option>
 </form:select>
 </td></tr>
-<tr><td><label for="user_state" >State</label></td>
+<tr><td><label for="user_address1.state" >State</label></td>
 <td>
-<form:select path="user_state">
+<form:select path="user_address1.state">
 <form:option value="Bihar"></form:option>
 <form:option value="Maharashtra"></form:option>
 <form:option value="Karnataka"></form:option>
@@ -69,15 +69,15 @@
 <form:option value="Rajasthan"></form:option>
 </form:select>
 </td></tr>
-<tr><td><label for="user_pincode" >Pincode</label></td>
-<td><form:input path="user_pincode" />
+<tr><td><label for="user_address1.pincode" >Pincode</label></td>
+<td><form:input path="user_address1.pincode" />
 </tr>
 <tr><td><label for="user_contact1" >Contact Number</label></td>
 <td><form:input path="user_contact1" />
 </tr>
-<tr><td><label for="user_country" >Country</label></td>
+<tr><td><label for="user_address1.country" >Country</label></td>
 <td>
-<form:select path="user_country">
+<form:select path="user_address1.country">
 <form:option value="India"></form:option>
 <form:option value="USA"></form:option>
 <form:option value="Srilanka"></form:option>

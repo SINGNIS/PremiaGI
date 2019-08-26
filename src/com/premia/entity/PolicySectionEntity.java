@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -28,7 +30,49 @@ public class PolicySectionEntity {
 	private Double ps_tot_prem_lc_1;
 	
 	@ManyToOne
+	@JoinColumn(name="ps_sec_policy_id")
 	private PolicyEntity policysec;
+	
+	@ManyToOne
+	@JoinColumn(name="ps_sec_user_id")
+	private PolicyEntity usersec_id;
+	
+	@OneToMany(mappedBy = "prai_pol_section_id")
+	private Collection<PolicyRiskEntity> ps_policy_risks = new ArrayList<PolicyRiskEntity>();
+
+	public Collection<PolicyRiskEntity> getPs_policy_risks() {
+		return ps_policy_risks;
+	}
+
+	public void setPs_policy_risks(Collection<PolicyRiskEntity> ps_policy_risks) {
+		this.ps_policy_risks = ps_policy_risks;
+	}
+
+	public Integer getPs_sys_id() {
+		return ps_sys_id;
+	}
+
+	public void setPs_sys_id(Integer ps_sys_id) {
+		this.ps_sys_id = ps_sys_id;
+	}
+
+	public PolicyEntity getPolicysec() {
+		return policysec;
+	}
+
+	public void setPolicysec(PolicyEntity policysec) {
+		this.policysec = policysec;
+	}
+
+	public PolicyEntity getUsersec_id() {
+		return usersec_id;
+	}
+
+	public void setUsersec_id(PolicyEntity usersec_id) {
+		this.usersec_id = usersec_id;
+	}
+
+
 
 	public PolicyEntity getPolicy() {
 		return policysec;

@@ -2,7 +2,14 @@ package com.premia.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity(name="Pgit_Pol_Risk_Cover")
 public class PolicyRiskCoverEntity{
+	@Id
 	private int prc_pol_sys_id;
 	private int prc_prai_sys_id;
 	private String prc_div_code;
@@ -14,6 +21,18 @@ public class PolicyRiskCoverEntity{
 	private long prc_cvr_si_lc_1;
 	private long prc_cvr_prem_fc;
 	private long prc_cvr_prem_lc_1;
+	
+	/*@ManyToOne
+	@JoinColumn(name="prc_pol_risk_id")
+	private PolicySectionEntity prc_pol_risk_id ;
+
+	public PolicySectionEntity getPrc_pol_risk_id() {
+		return prc_pol_risk_id;
+	}
+
+	public void setPrc_pol_risk_id(PolicySectionEntity prc_pol_risk_id) {
+		this.prc_pol_risk_id = prc_pol_risk_id;
+	}*/
 
 	public int getPrc_pol_sys_id() {
 		return prc_pol_sys_id;

@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -57,6 +58,18 @@ public class PolicyEntity {
 	public void setUser(UserEntity user) {
 		this.user = user;
 	}
+	
+	@OneToMany(mappedBy="policysec")
+	Collection<PolicySectionEntity> policysection=
+	new ArrayList<PolicySectionEntity>();
+
+	public Collection<PolicySectionEntity> getPolicysection() {
+		return policysection;
+	}
+
+	public void setPolicysection(Collection<PolicySectionEntity> policysection) {
+		this.policysection = policysection;
+	}
 
 	public String getPolDesctiption() {
 		return PolDesctiption;
@@ -73,14 +86,6 @@ public class PolicyEntity {
 	public void setCreatedByUserName(String createdByUserName) {
 		this.createdByUserName = createdByUserName;
 	}
-
-	/*public UserEntity getUser() {
-		return user;
-	}
-
-	public void setUser(UserEntity user) {
-		this.user = user;
-	}*/
 
 	public int getPolSysId() {
 		return PolSysId;

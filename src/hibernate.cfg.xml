@@ -17,5 +17,10 @@
  
 		<!--list out all the Model class we are going to create -->
         <mapping class="com.premia.entity.UserEntity" />
+        <mapping class="com.premia.entity.PolicyEntity" />
+        <mapping class="com.premia.entity.PolicyBrokerEntity" />
+        <mapping class="com.premia.entity.PolicySectionEntity" />
+        <mapping class="com.premia.entity.PolicyRiskEntity" />
+        <mapping class="com.premia.entity.PolicyRiskCoverEntity" />
     </session-factory>
 </hibernate-configuration>
